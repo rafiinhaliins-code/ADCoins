@@ -1,12 +1,263 @@
 ﻿<Window x:Class="ADCoins.MainWindow"
         xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
         xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
-        xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
-        xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
-        xmlns:local="clr-namespace:ADCoins"
-        mc:Ignorable="d"
-        Title="MainWindow" Height="450" Width="800">
+        Title="ADCoins"
+        Width="1200"
+        Height="700"
+        MinWidth="900"
+        MinHeight="550"
+        WindowStartupLocation="CenterScreen"
+        Background="#121212">
+
     <Grid>
 
+        <!-- Estrutura principal -->
+        <Grid.ColumnDefinitions>
+            <ColumnDefinition x:Name="SidebarColumn" Width="220"/>
+            <ColumnDefinition Width="*"/>
+        </Grid.ColumnDefinitions>
+
+
+        <!-- ========================= -->
+        <!-- SIDEBAR -->
+        <!-- ========================= -->
+
+        <Border Grid.Column="0"
+                Background="#1B1B1B"
+                BorderBrush="#2C2C2C"
+                BorderThickness="0,0,1,0">
+
+            <Grid>
+
+                <Grid.RowDefinitions>
+                    <RowDefinition Height="80"/>
+                    <RowDefinition Height="*"/>
+                    <RowDefinition Height="70"/>
+                </Grid.RowDefinitions>
+
+
+                <!-- LOGO / NOME -->
+                <Border Grid.Row="0"
+                        Background="#181818">
+
+                    <StackPanel VerticalAlignment="Center"
+                                Margin="20,0">
+
+                        <TextBlock Text="ADCoins"
+                                   FontSize="26"
+                                   FontWeight="Bold"
+                                   Foreground="White"/>
+
+                        <TextBlock Text="Tibia Economy"
+                                   FontSize="12"
+                                   Foreground="#888888"/>
+
+                    </StackPanel>
+
+                </Border>
+
+
+                <!-- MENU -->
+                <StackPanel Grid.Row="1"
+                            Margin="10,20">
+
+                    <!-- DASHBOARD -->
+                    <Button Height="50"
+                            Margin="0,0,0,8"
+                            Background="#292929"
+                            Foreground="White"
+                            BorderThickness="0"
+                            HorizontalContentAlignment="Left"
+                            Padding="15,0">
+
+                        <StackPanel Orientation="Horizontal">
+
+                            <TextBlock Text="🏠"
+                                       FontSize="18"
+                                       Width="35"/>
+
+                            <TextBlock Text="Dashboard"
+                                       FontSize="15"
+                                       VerticalAlignment="Center"/>
+
+                        </StackPanel>
+
+                    </Button>
+
+
+                    <!-- IMBUEMENTS -->
+                    <Button Height="50"
+                            Margin="0,0,0,8"
+                            Background="Transparent"
+                            Foreground="#CCCCCC"
+                            BorderThickness="0"
+                            HorizontalContentAlignment="Left"
+                            Padding="15,0">
+
+                        <StackPanel Orientation="Horizontal">
+
+                            <TextBlock Text="⚔"
+                                       FontSize="18"
+                                       Width="35"/>
+
+                            <TextBlock Text="Imbuements"
+                                       FontSize="15"
+                                       VerticalAlignment="Center"/>
+
+                        </StackPanel>
+
+                    </Button>
+
+
+                    <!-- HUNT ANALYZER -->
+                    <Button Height="50"
+                            Margin="0,0,0,8"
+                            Background="Transparent"
+                            Foreground="#CCCCCC"
+                            BorderThickness="0"
+                            HorizontalContentAlignment="Left"
+                            Padding="15,0">
+
+                        <StackPanel Orientation="Horizontal">
+
+                            <TextBlock Text="💰"
+                                       FontSize="18"
+                                       Width="35"/>
+
+                            <TextBlock Text="Hunt Analyzer"
+                                       FontSize="15"
+                                       VerticalAlignment="Center"/>
+
+                        </StackPanel>
+
+                    </Button>
+
+
+                    <!-- CONFIGURAÇÕES -->
+                    <Button Height="50"
+                            Background="Transparent"
+                            Foreground="#CCCCCC"
+                            BorderThickness="0"
+                            HorizontalContentAlignment="Left"
+                            Padding="15,0">
+
+                        <StackPanel Orientation="Horizontal">
+
+                            <TextBlock Text="⚙"
+                                       FontSize="18"
+                                       Width="35"/>
+
+                            <TextBlock Text="Configurações"
+                                       FontSize="15"
+                                       VerticalAlignment="Center"/>
+
+                        </StackPanel>
+
+                    </Button>
+
+                </StackPanel>
+
+
+                <!-- RODAPÉ -->
+                <Border Grid.Row="2"
+                        Background="#181818">
+
+                    <TextBlock Text="ADCoins v1.0"
+                               Foreground="#666666"
+                               HorizontalAlignment="Center"
+                               VerticalAlignment="Center"/>
+
+                </Border>
+
+            </Grid>
+
+        </Border>
+
+
+        <!-- ========================= -->
+        <!-- ÁREA PRINCIPAL -->
+        <!-- ========================= -->
+
+        <Grid Grid.Column="1"
+              Background="#121212">
+
+            <Grid.RowDefinitions>
+                <RowDefinition Height="65"/>
+                <RowDefinition Height="*"/>
+            </Grid.RowDefinitions>
+
+
+            <!-- BARRA SUPERIOR -->
+            <Border Grid.Row="0"
+                    Background="#181818"
+                    BorderBrush="#2C2C2C"
+                    BorderThickness="0,0,0,1">
+
+                <Grid>
+
+                    <TextBlock Text="Dashboard"
+                               FontSize="22"
+                               FontWeight="SemiBold"
+                               Foreground="White"
+                               VerticalAlignment="Center"
+                               Margin="25,0"/>
+
+                </Grid>
+
+            </Border>
+
+
+            <!-- CONTEÚDO -->
+            <Grid Grid.Row="1"
+                  Margin="30">
+
+                <StackPanel>
+
+                    <TextBlock Text="Bem-vindo ao ADCoins"
+                               FontSize="30"
+                               FontWeight="Bold"
+                               Foreground="White"/>
+
+                    <TextBlock Text="Controle seus Tibia Coins, farms e imbuements."
+                               FontSize="15"
+                               Foreground="#888888"
+                               Margin="0,8,0,30"/>
+
+
+                    <!-- CARD -->
+                    <Border Width="350"
+                            Height="150"
+                            HorizontalAlignment="Left"
+                            Background="#1B1B1B"
+                            CornerRadius="10"
+                            Padding="20">
+
+                        <StackPanel>
+
+                            <TextBlock Text="Valor de 250 TC"
+                                       Foreground="#999999"
+                                       FontSize="14"/>
+
+                            <TextBlock Text="R$ 0,00"
+                                       Foreground="White"
+                                       FontSize="32"
+                                       FontWeight="Bold"
+                                       Margin="0,10,0,0"/>
+
+                            <TextBlock Text="Configure o valor no Dashboard"
+                                       Foreground="#666666"
+                                       FontSize="12"/>
+
+                        </StackPanel>
+
+                    </Border>
+
+                </StackPanel>
+
+            </Grid>
+
+        </Grid>
+
     </Grid>
+
 </Window>
