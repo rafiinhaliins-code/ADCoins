@@ -11,7 +11,7 @@
 
     <Grid>
 
-        <!-- Estrutura principal -->
+        <!-- COLUNAS -->
         <Grid.ColumnDefinitions>
             <ColumnDefinition x:Name="SidebarColumn" Width="220"/>
             <ColumnDefinition Width="*"/>
@@ -36,11 +36,12 @@
                 </Grid.RowDefinitions>
 
 
-                <!-- LOGO / NOME -->
-                <Border Grid.Row="0"
-                        Background="#181818">
+                <!-- CABEÇALHO DA SIDEBAR -->
+                <Grid Grid.Row="0">
 
-                    <StackPanel VerticalAlignment="Center"
+                    <!-- LOGO -->
+                    <StackPanel x:Name="LogoPanel"
+                                VerticalAlignment="Center"
                                 Margin="20,0">
 
                         <TextBlock Text="ADCoins"
@@ -54,12 +55,31 @@
 
                     </StackPanel>
 
-                </Border>
+
+                    <!-- BOTÃO MENU -->
+                    <Button x:Name="MenuButton"
+                            Width="40"
+                            Height="40"
+                            HorizontalAlignment="Right"
+                            VerticalAlignment="Center"
+                            Margin="0,0,10,0"
+                            Click="MenuButton_Click"
+                            Background="Transparent"
+                            Foreground="White"
+                            BorderThickness="0"
+                            FontSize="22"
+                            Content="☰"/>
+
+                </Grid>
 
 
+                <!-- ========================= -->
                 <!-- MENU -->
+                <!-- ========================= -->
+
                 <StackPanel Grid.Row="1"
                             Margin="10,20">
+
 
                     <!-- DASHBOARD -->
                     <Button Height="50"
@@ -76,7 +96,8 @@
                                        FontSize="18"
                                        Width="35"/>
 
-                            <TextBlock Text="Dashboard"
+                            <TextBlock x:Name="DashboardText"
+                                       Text="Dashboard"
                                        FontSize="15"
                                        VerticalAlignment="Center"/>
 
@@ -100,7 +121,8 @@
                                        FontSize="18"
                                        Width="35"/>
 
-                            <TextBlock Text="Imbuements"
+                            <TextBlock x:Name="ImbuementsText"
+                                       Text="Imbuements"
                                        FontSize="15"
                                        VerticalAlignment="Center"/>
 
@@ -124,7 +146,8 @@
                                        FontSize="18"
                                        Width="35"/>
 
-                            <TextBlock Text="Hunt Analyzer"
+                            <TextBlock x:Name="HuntText"
+                                       Text="Hunt Analyzer"
                                        FontSize="15"
                                        VerticalAlignment="Center"/>
 
@@ -147,7 +170,8 @@
                                        FontSize="18"
                                        Width="35"/>
 
-                            <TextBlock Text="Configurações"
+                            <TextBlock x:Name="ConfigText"
+                                       Text="Configurações"
                                        FontSize="15"
                                        VerticalAlignment="Center"/>
 
@@ -159,10 +183,12 @@
 
 
                 <!-- RODAPÉ -->
+
                 <Border Grid.Row="2"
                         Background="#181818">
 
-                    <TextBlock Text="ADCoins v1.0"
+                    <TextBlock x:Name="VersionText"
+                               Text="ADCoins v1.0"
                                Foreground="#666666"
                                HorizontalAlignment="Center"
                                VerticalAlignment="Center"/>
@@ -188,26 +214,24 @@
 
 
             <!-- BARRA SUPERIOR -->
+
             <Border Grid.Row="0"
                     Background="#181818"
                     BorderBrush="#2C2C2C"
                     BorderThickness="0,0,0,1">
 
-                <Grid>
-
-                    <TextBlock Text="Dashboard"
-                               FontSize="22"
-                               FontWeight="SemiBold"
-                               Foreground="White"
-                               VerticalAlignment="Center"
-                               Margin="25,0"/>
-
-                </Grid>
+                <TextBlock Text="Dashboard"
+                           FontSize="22"
+                           FontWeight="SemiBold"
+                           Foreground="White"
+                           VerticalAlignment="Center"
+                           Margin="25,0"/>
 
             </Border>
 
 
             <!-- CONTEÚDO -->
+
             <Grid Grid.Row="1"
                   Margin="30">
 
@@ -225,6 +249,7 @@
 
 
                     <!-- CARD -->
+
                     <Border Width="350"
                             Height="150"
                             HorizontalAlignment="Left"
