@@ -82,7 +82,8 @@
 
 
                     <!-- DASHBOARD -->
-                    <Button Height="50"
+                    <Button x:Name="DashboardButton"
+                            Height="50"
                             Margin="0,0,0,8"
                             Background="#292929"
                             Foreground="White"
@@ -107,7 +108,8 @@
 
 
                     <!-- IMBUEMENTS -->
-                    <Button Height="50"
+                    <Button x:Name="ImbuementsButton"
+                            Height="50"
                             Margin="0,0,0,8"
                             Background="Transparent"
                             Foreground="#CCCCCC"
@@ -132,7 +134,8 @@
 
 
                     <!-- HUNT ANALYZER -->
-                    <Button Height="50"
+                    <Button x:Name="HuntButton"
+                            Height="50"
                             Margin="0,0,0,8"
                             Background="Transparent"
                             Foreground="#CCCCCC"
@@ -157,7 +160,8 @@
 
 
                     <!-- CONFIGURAÇÕES -->
-                    <Button Height="50"
+                    <Button x:Name="ConfigButton"
+                            Height="50"
                             Background="Transparent"
                             Foreground="#CCCCCC"
                             BorderThickness="0"
