@@ -9,7 +9,14 @@ namespace ADCoins
         public MainWindow()
         {
             InitializeComponent();
+
+            // Abre o Dashboard ao iniciar
+            MainFrame.Navigate(new Pages.DashboardPage());
         }
+
+        // =========================================
+        // BOTÃO DA SIDEBAR
+        // =========================================
 
         private void MenuButton_Click(object sender, RoutedEventArgs e)
         {
@@ -17,10 +24,7 @@ namespace ADCoins
 
             if (sidebarAberta)
             {
-                // =========================
                 // ABRIR SIDEBAR
-                // =========================
-
                 SidebarColumn.Width = new GridLength(220);
 
                 LogoPanel.Visibility = Visibility.Visible;
@@ -32,25 +36,33 @@ namespace ADCoins
 
                 VersionText.Visibility = Visibility.Visible;
 
-                // Restaurar alinhamento
-                DashboardButton.HorizontalContentAlignment = HorizontalAlignment.Left;
-                ImbuementsButton.HorizontalContentAlignment = HorizontalAlignment.Left;
-                HuntButton.HorizontalContentAlignment = HorizontalAlignment.Left;
-                ConfigButton.HorizontalContentAlignment = HorizontalAlignment.Left;
+                DashboardButton.HorizontalContentAlignment =
+                    HorizontalAlignment.Left;
 
-                DashboardButton.Padding = new Thickness(15, 0, 0, 0);
-                ImbuementsButton.Padding = new Thickness(15, 0, 0, 0);
-                HuntButton.Padding = new Thickness(15, 0, 0, 0);
-                ConfigButton.Padding = new Thickness(15, 0, 0, 0);
+                ImbuementsButton.HorizontalContentAlignment =
+                    HorizontalAlignment.Left;
 
-                MenuButton.Content = "☰";
+                HuntButton.HorizontalContentAlignment =
+                    HorizontalAlignment.Left;
+
+                ConfigButton.HorizontalContentAlignment =
+                    HorizontalAlignment.Left;
+
+                DashboardButton.Padding =
+                    new Thickness(15, 0, 0, 0);
+
+                ImbuementsButton.Padding =
+                    new Thickness(15, 0, 0, 0);
+
+                HuntButton.Padding =
+                    new Thickness(15, 0, 0, 0);
+
+                ConfigButton.Padding =
+                    new Thickness(15, 0, 0, 0);
             }
             else
             {
-                // =========================
                 // FECHAR SIDEBAR
-                // =========================
-
                 SidebarColumn.Width = new GridLength(70);
 
                 LogoPanel.Visibility = Visibility.Collapsed;
@@ -62,19 +74,42 @@ namespace ADCoins
 
                 VersionText.Visibility = Visibility.Collapsed;
 
-                // Centralizar os ícones
-                DashboardButton.HorizontalContentAlignment = HorizontalAlignment.Center;
-                ImbuementsButton.HorizontalContentAlignment = HorizontalAlignment.Center;
-                HuntButton.HorizontalContentAlignment = HorizontalAlignment.Center;
-                ConfigButton.HorizontalContentAlignment = HorizontalAlignment.Center;
+                DashboardButton.HorizontalContentAlignment =
+                    HorizontalAlignment.Center;
 
-                DashboardButton.Padding = new Thickness(0);
-                ImbuementsButton.Padding = new Thickness(0);
-                HuntButton.Padding = new Thickness(0);
-                ConfigButton.Padding = new Thickness(0);
+                ImbuementsButton.HorizontalContentAlignment =
+                    HorizontalAlignment.Center;
 
-                MenuButton.Content = "☰";
+                HuntButton.HorizontalContentAlignment =
+                    HorizontalAlignment.Center;
+
+                ConfigButton.HorizontalContentAlignment =
+                    HorizontalAlignment.Center;
+
+                DashboardButton.Padding =
+                    new Thickness(0);
+
+                ImbuementsButton.Padding =
+                    new Thickness(0);
+
+                HuntButton.Padding =
+                    new Thickness(0);
+
+                ConfigButton.Padding =
+                    new Thickness(0);
             }
+        }
+
+
+        // =========================================
+        // BOTÃO IMBUEMENTS
+        // =========================================
+
+        private void ImbuementsButton_Click(
+            object sender,
+            RoutedEventArgs e)
+        {
+            MainFrame.Navigate(new Pages.ImbuementsPage());
         }
     }
 }
