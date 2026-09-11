@@ -89,7 +89,8 @@
                             Foreground="White"
                             BorderThickness="0"
                             HorizontalContentAlignment="Left"
-                            Padding="15,0">
+                            Padding="15,0"
+                            Click="DashboardButton_Click">
 
                         <StackPanel Orientation="Horizontal">
 
@@ -142,7 +143,8 @@
                             Foreground="#CCCCCC"
                             BorderThickness="0"
                             HorizontalContentAlignment="Left"
-                            Padding="15,0">
+                            Padding="15,0"
+                            Click="HuntButton_Click">
 
                         <StackPanel Orientation="Horizontal">
 
@@ -167,7 +169,8 @@
                             Foreground="#CCCCCC"
                             BorderThickness="0"
                             HorizontalContentAlignment="Left"
-                            Padding="15,0">
+                            Padding="15,0"
+                            Click="ConfigButton_Click">
 
                         <StackPanel Orientation="Horizontal">
 

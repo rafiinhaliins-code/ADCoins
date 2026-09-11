@@ -14,8 +14,9 @@ namespace ADCoins
             MainFrame.Navigate(new Pages.DashboardPage());
         }
 
+
         // =========================================
-        // BOTÃO DA SIDEBAR
+        // BOTÃO DO MENU
         // =========================================
 
         private void MenuButton_Click(object sender, RoutedEventArgs e)
@@ -24,17 +25,26 @@ namespace ADCoins
 
             if (sidebarAberta)
             {
-                // ABRIR SIDEBAR
-                SidebarColumn.Width = new GridLength(220);
+                SidebarColumn.Width =
+                    new GridLength(220);
 
-                LogoPanel.Visibility = Visibility.Visible;
+                LogoPanel.Visibility =
+                    Visibility.Visible;
 
-                DashboardText.Visibility = Visibility.Visible;
-                ImbuementsText.Visibility = Visibility.Visible;
-                HuntText.Visibility = Visibility.Visible;
-                ConfigText.Visibility = Visibility.Visible;
+                DashboardText.Visibility =
+                    Visibility.Visible;
 
-                VersionText.Visibility = Visibility.Visible;
+                ImbuementsText.Visibility =
+                    Visibility.Visible;
+
+                HuntText.Visibility =
+                    Visibility.Visible;
+
+                ConfigText.Visibility =
+                    Visibility.Visible;
+
+                VersionText.Visibility =
+                    Visibility.Visible;
 
                 DashboardButton.HorizontalContentAlignment =
                     HorizontalAlignment.Left;
@@ -62,17 +72,26 @@ namespace ADCoins
             }
             else
             {
-                // FECHAR SIDEBAR
-                SidebarColumn.Width = new GridLength(70);
+                SidebarColumn.Width =
+                    new GridLength(70);
 
-                LogoPanel.Visibility = Visibility.Collapsed;
+                LogoPanel.Visibility =
+                    Visibility.Collapsed;
 
-                DashboardText.Visibility = Visibility.Collapsed;
-                ImbuementsText.Visibility = Visibility.Collapsed;
-                HuntText.Visibility = Visibility.Collapsed;
-                ConfigText.Visibility = Visibility.Collapsed;
+                DashboardText.Visibility =
+                    Visibility.Collapsed;
 
-                VersionText.Visibility = Visibility.Collapsed;
+                ImbuementsText.Visibility =
+                    Visibility.Collapsed;
+
+                HuntText.Visibility =
+                    Visibility.Collapsed;
+
+                ConfigText.Visibility =
+                    Visibility.Collapsed;
+
+                VersionText.Visibility =
+                    Visibility.Collapsed;
 
                 DashboardButton.HorizontalContentAlignment =
                     HorizontalAlignment.Center;
@@ -102,14 +121,52 @@ namespace ADCoins
 
 
         // =========================================
-        // BOTÃO IMBUEMENTS
+        // DASHBOARD
+        // =========================================
+
+        private void DashboardButton_Click(
+            object sender,
+            RoutedEventArgs e)
+        {
+            MainFrame.Navigate(
+                new Pages.DashboardPage());
+        }
+
+
+        // =========================================
+        // IMBUEMENTS
         // =========================================
 
         private void ImbuementsButton_Click(
             object sender,
             RoutedEventArgs e)
         {
-            MainFrame.Navigate(new Pages.ImbuementsPage());
+            MainFrame.Navigate(
+                new Pages.ImbuementsPage());
+        }
+
+
+        // =========================================
+        // HUNT ANALYZER
+        // =========================================
+
+        private void HuntButton_Click(
+            object sender,
+            RoutedEventArgs e)
+        {
+            // Página será criada posteriormente.
+        }
+
+
+        // =========================================
+        // CONFIGURAÇÕES
+        // =========================================
+
+        private void ConfigButton_Click(
+            object sender,
+            RoutedEventArgs e)
+        {
+            // Página será criada posteriormente.
         }
     }
 }

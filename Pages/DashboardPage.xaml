@@ -46,7 +46,8 @@
                                    Foreground="#999999"
                                    FontSize="14"/>
 
-                        <TextBlock Text="R$ 0,00"
+                        <TextBlock x:Name="Valor250TCText"
+                                   Text="R$ 0,00"
                                    FontSize="28"
                                    FontWeight="Bold"
                                    Foreground="White"
@@ -68,11 +69,12 @@
 
                     <StackPanel>
 
-                        <TextBlock Text="Valor da TC"
+                        <TextBlock Text="Valor de 1 TC"
                                    Foreground="#999999"
                                    FontSize="14"/>
 
-                        <TextBlock Text="0"
+                        <TextBlock x:Name="Valor1TCText"
+                                   Text="0 GOLD"
                                    FontSize="28"
                                    FontWeight="Bold"
                                    Foreground="White"
@@ -98,7 +100,8 @@
                                    Foreground="#999999"
                                    FontSize="14"/>
 
-                        <TextBlock Text="0"
+                        <TextBlock x:Name="ValorFarmadoText"
+                                   Text="0 GOLD"
                                    FontSize="28"
                                    FontWeight="Bold"
                                    Foreground="White"
@@ -111,7 +114,9 @@
             </Grid>
 
 
-            <!-- ÁREA DO CONVERSOR -->
+            <!-- ====================================== -->
+            <!-- CONVERSOR -->
+            <!-- ====================================== -->
 
             <Border Margin="0,25,0,0"
                     Background="#1B1B1B"
@@ -130,6 +135,8 @@
                                Margin="0,5,0,20"/>
 
 
+                    <!-- CAMPOS -->
+
                     <Grid>
 
                         <Grid.ColumnDefinitions>
@@ -138,7 +145,7 @@
                         </Grid.ColumnDefinitions>
 
 
-                        <!-- VALOR TC -->
+                        <!-- 250 TC -->
 
                         <StackPanel Grid.Column="0"
                                     Margin="0,0,10,0">
@@ -147,7 +154,8 @@
                                        Foreground="#CCCCCC"
                                        Margin="0,0,0,8"/>
 
-                            <TextBox Height="40"
+                            <TextBox x:Name="Valor250TCInput"
+                                     Height="40"
                                      Background="#252525"
                                      Foreground="White"
                                      BorderBrush="#3A3A3A"
@@ -157,7 +165,7 @@
                         </StackPanel>
 
 
-                        <!-- GOLD -->
+                        <!-- TC GOLD -->
 
                         <StackPanel Grid.Column="1"
                                     Margin="10,0,0,0">
@@ -166,7 +174,8 @@
                                        Foreground="#CCCCCC"
                                        Margin="0,0,0,8"/>
 
-                            <TextBox Height="40"
+                            <TextBox x:Name="ValorTCGoldInput"
+                                     Height="40"
                                      Background="#252525"
                                      Foreground="White"
                                      BorderBrush="#3A3A3A"
@@ -184,7 +193,8 @@
                                Foreground="#CCCCCC"
                                Margin="0,20,0,8"/>
 
-                    <TextBox Height="40"
+                    <TextBox x:Name="ValorFarmadoInput"
+                             Height="40"
                              Background="#252525"
                              Foreground="White"
                              BorderBrush="#3A3A3A"
@@ -200,8 +210,95 @@
                             Background="#292929"
                             Foreground="White"
                             BorderThickness="0"
-                            FontWeight="Bold"/>
+                            FontWeight="Bold"
+                            Click="CalcularButton_Click"/>
 
+
+                    <!-- ========================================= -->
+                    <!-- RESULTADO -->
+                    <!-- ========================================= -->
+
+                    <Border Margin="0,25,0,0"
+        Background="#1B1B1B"
+        CornerRadius="10"
+        Padding="25">
+
+                        <StackPanel>
+
+                            <TextBlock Text="Resultado"
+                   FontSize="22"
+                   FontWeight="SemiBold"
+                   Foreground="White"/>
+
+                            <TextBlock Text="Resultado da conversão"
+                   Foreground="#888888"
+                   Margin="0,5,0,20"/>
+
+
+                            <!-- VALORES DO RESULTADO -->
+
+                            <Grid>
+
+                                <Grid.ColumnDefinitions>
+                                    <ColumnDefinition Width="*"/>
+                                    <ColumnDefinition Width="*"/>
+                                </Grid.ColumnDefinitions>
+
+
+                                <!-- TC OBTIDAS -->
+
+                                <StackPanel Grid.Column="0"
+                        Margin="0,0,10,0">
+
+                                    <TextBlock Text="TC Obtidas"
+                           Foreground="#888888"
+                           FontSize="14"/>
+
+                                    <TextBlock x:Name="ResultadoTCText"
+                           Text="0,00 TC"
+                           Foreground="White"
+                           FontSize="26"
+                           FontWeight="Bold"
+                           Margin="0,5,0,0"/>
+
+                                </StackPanel>
+
+
+                                <!-- VALOR EM REAIS -->
+
+                                <StackPanel Grid.Column="1"
+                        Margin="10,0,0,0">
+
+                                    <TextBlock Text="Valor do Farm em R$"
+                           Foreground="#888888"
+                           FontSize="14"/>
+
+                                    <TextBlock x:Name="ResultadoReaisText"
+                           Text="R$ 0,00"
+                           Foreground="LightGreen"
+                           FontSize="26"
+                           FontWeight="Bold"
+                           Margin="0,5,0,0"/>
+
+                                </StackPanel>
+
+                            </Grid>
+
+
+                            <!-- BOTÃO COPIAR -->
+
+                            <Button Content="📋 COPIAR RESULTADO"
+                Height="40"
+                Margin="0,20,0,0"
+                Background="#292929"
+                Foreground="White"
+                BorderThickness="0"
+                FontWeight="Bold"
+                Click="CopiarResultadoButton_Click"/>
+
+                        </StackPanel>
+
+                    </Border>
                 </StackPanel>
 
             </Border>
