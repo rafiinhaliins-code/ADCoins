@@ -40,8 +40,6 @@
                     </Grid.ColumnDefinitions>
 
 
-                    <!-- DESCRIÇÃO -->
-
                     <StackPanel Grid.Column="0"
                                 VerticalAlignment="Center">
 
@@ -66,7 +64,8 @@
                                    Foreground="#CCCCCC"
                                    Margin="0,0,0,7"/>
 
-                        <TextBox Height="42"
+                        <TextBox x:Name="GoldTokenInput"
+                                 Height="42"
                                  Text="57000"
                                  Background="#252525"
                                  Foreground="White"
@@ -86,7 +85,8 @@
                                    Foreground="#CCCCCC"
                                    Margin="0,0,0,7"/>
 
-                        <TextBox Height="42"
+                        <TextBox x:Name="SilverTokenInput"
+                                 Height="42"
                                  Text="64500"
                                  Background="#252525"
                                  Foreground="White"
@@ -117,21 +117,13 @@
             <!-- INVENTÁRIO -->
             <!-- ================================= -->
 
-            <!-- ================================= -->
-            <!-- INVENTÁRIO DO PERSONAGEM -->
-            <!-- ================================= -->
-
             <Grid HorizontalAlignment="Center">
-
-                <!-- 3 COLUNAS -->
 
                 <Grid.ColumnDefinitions>
                     <ColumnDefinition Width="125"/>
                     <ColumnDefinition Width="125"/>
                     <ColumnDefinition Width="125"/>
                 </Grid.ColumnDefinitions>
-
-                <!-- 4 SLOTS VERTICAIS -->
 
                 <Grid.RowDefinitions>
                     <RowDefinition Height="125"/>
@@ -142,348 +134,381 @@
 
 
                 <!-- ================================= -->
-                <!-- COLUNA 1 - ESQUERDA -->
-                <!-- 3 SLOTS -->
+                <!-- COLUNA 1 -->
                 <!-- ================================= -->
 
 
                 <!-- AMULET -->
 
-                <Border Grid.Row="1"
-            Grid.Column="0"
-            Margin="5"
-            Background="#1B1B1B"
-            BorderBrush="#353535"
-            BorderThickness="1"
-            CornerRadius="8">
+                <Button x:Name="AmuletButton"
+                        Grid.Row="1"
+                        Grid.Column="0"
+                        Margin="5"
+                        Background="#1B1B1B"
+                        BorderBrush="#353535"
+                        BorderThickness="1"
+                        Click="EquipmentButton_Click"
+                        Tag="Amulet">
 
                     <StackPanel VerticalAlignment="Center"
-                    HorizontalAlignment="Center">
+                                HorizontalAlignment="Center">
 
                         <TextBlock Text="💎"
-                       FontSize="38"
-                       HorizontalAlignment="Center"/>
+                                   FontSize="38"
+                                   HorizontalAlignment="Center"/>
 
                         <TextBlock Text="Amulet"
-                       FontSize="16"
-                       FontWeight="Bold"
-                       Foreground="White"
-                       HorizontalAlignment="Center"
-                       Margin="0,5,0,0"/>
+                                   FontSize="16"
+                                   FontWeight="Bold"
+                                   Foreground="White"
+                                   HorizontalAlignment="Center"
+                                   Margin="0,5,0,0"/>
+
+                        <TextBlock Text="1 slot"
+                                   FontSize="12"
+                                   Foreground="#888888"
+                                   HorizontalAlignment="Center"/>
 
                     </StackPanel>
 
-                </Border>
+                </Button>
 
 
                 <!-- WEAPON -->
 
-                <Border Grid.Row="2"
-            Grid.Column="0"
-            Margin="5"
-            Background="#1B1B1B"
-            BorderBrush="#353535"
-            BorderThickness="1"
-            CornerRadius="8">
+                <Button x:Name="WeaponButton"
+                        Grid.Row="2"
+                        Grid.Column="0"
+                        Margin="5"
+                        Background="#1B1B1B"
+                        BorderBrush="#353535"
+                        BorderThickness="1"
+                        Click="EquipmentButton_Click"
+                        Tag="Weapon">
 
                     <StackPanel VerticalAlignment="Center"
-                    HorizontalAlignment="Center">
+                                HorizontalAlignment="Center">
 
                         <TextBlock Text="⚔"
-                       FontSize="38"
-                       HorizontalAlignment="Center"/>
+                                   FontSize="38"
+                                   HorizontalAlignment="Center"/>
 
                         <TextBlock Text="Weapon"
-                       FontSize="16"
-                       FontWeight="Bold"
-                       Foreground="White"
-                       HorizontalAlignment="Center"
-                       Margin="0,5,0,0"/>
+                                   FontSize="16"
+                                   FontWeight="Bold"
+                                   Foreground="White"
+                                   HorizontalAlignment="Center"
+                                   Margin="0,5,0,0"/>
 
-                        <TextBlock Text="2 ou 3 slots"
-                       FontSize="12"
-                       Foreground="#888888"
-                       HorizontalAlignment="Center"/>
+                        <TextBlock Text="3 slots"
+                                   FontSize="12"
+                                   Foreground="#888888"
+                                   HorizontalAlignment="Center"/>
 
                     </StackPanel>
 
-                </Border>
+                </Button>
 
 
                 <!-- RING -->
 
-                <Border Grid.Row="3"
-            Grid.Column="0"
-            Margin="5"
-            Background="#1B1B1B"
-            BorderBrush="#353535"
-            BorderThickness="1"
-            CornerRadius="8">
+                <Button x:Name="RingButton"
+                        Grid.Row="3"
+                        Grid.Column="0"
+                        Margin="5"
+                        Background="#1B1B1B"
+                        BorderBrush="#353535"
+                        BorderThickness="1"
+                        Click="EquipmentButton_Click"
+                        Tag="Ring">
 
                     <StackPanel VerticalAlignment="Center"
-                    HorizontalAlignment="Center">
+                                HorizontalAlignment="Center">
 
                         <TextBlock Text="💍"
-                       FontSize="38"
-                       HorizontalAlignment="Center"/>
+                                   FontSize="38"
+                                   HorizontalAlignment="Center"/>
 
                         <TextBlock Text="Ring"
-                       FontSize="16"
-                       FontWeight="Bold"
-                       Foreground="White"
-                       HorizontalAlignment="Center"
-                       Margin="0,5,0,0"/>
+                                   FontSize="16"
+                                   FontWeight="Bold"
+                                   Foreground="White"
+                                   HorizontalAlignment="Center"
+                                   Margin="0,5,0,0"/>
+
+                        <TextBlock Text="1 slot"
+                                   FontSize="12"
+                                   Foreground="#888888"
+                                   HorizontalAlignment="Center"/>
 
                     </StackPanel>
 
-                </Border>
+                </Button>
 
 
                 <!-- ================================= -->
-                <!-- COLUNA 2 - CENTRO -->
-                <!-- 4 SLOTS -->
+                <!-- COLUNA 2 -->
                 <!-- ================================= -->
 
 
                 <!-- HELMET -->
 
-                <Border Grid.Row="0"
-            Grid.Column="1"
-            Margin="5"
-            Background="#1B1B1B"
-            BorderBrush="#353535"
-            BorderThickness="1"
-            CornerRadius="8">
+                <Button x:Name="HelmetButton"
+                        Grid.Row="0"
+                        Grid.Column="1"
+                        Margin="5"
+                        Background="#1B1B1B"
+                        BorderBrush="#353535"
+                        BorderThickness="1"
+                        Click="EquipmentButton_Click"
+                        Tag="Helmet">
 
                     <StackPanel VerticalAlignment="Center"
-                    HorizontalAlignment="Center">
+                                HorizontalAlignment="Center">
 
                         <TextBlock Text="⛑"
-                       FontSize="38"
-                       HorizontalAlignment="Center"/>
+                                   FontSize="38"
+                                   HorizontalAlignment="Center"/>
 
                         <TextBlock Text="Helmet"
-                       FontSize="16"
-                       FontWeight="Bold"
-                       Foreground="White"
-                       HorizontalAlignment="Center"
-                       Margin="0,5,0,0"/>
+                                   FontSize="16"
+                                   FontWeight="Bold"
+                                   Foreground="White"
+                                   HorizontalAlignment="Center"
+                                   Margin="0,5,0,0"/>
 
                         <TextBlock Text="2 slots"
-                       FontSize="12"
-                       Foreground="#888888"
-                       HorizontalAlignment="Center"/>
+                                   FontSize="12"
+                                   Foreground="#888888"
+                                   HorizontalAlignment="Center"/>
 
                     </StackPanel>
 
-                </Border>
+                </Button>
 
 
                 <!-- ARMOR -->
 
-                <Border Grid.Row="1"
-            Grid.Column="1"
-            Margin="5"
-            Background="#1B1B1B"
-            BorderBrush="#353535"
-            BorderThickness="1"
-            CornerRadius="8">
+                <Button x:Name="ArmorButton"
+                        Grid.Row="1"
+                        Grid.Column="1"
+                        Margin="5"
+                        Background="#1B1B1B"
+                        BorderBrush="#353535"
+                        BorderThickness="1"
+                        Click="EquipmentButton_Click"
+                        Tag="Armor">
 
                     <StackPanel VerticalAlignment="Center"
-                    HorizontalAlignment="Center">
+                                HorizontalAlignment="Center">
 
                         <TextBlock Text="🛡"
-                       FontSize="38"
-                       HorizontalAlignment="Center"/>
+                                   FontSize="38"
+                                   HorizontalAlignment="Center"/>
 
                         <TextBlock Text="Armor"
-                       FontSize="16"
-                       FontWeight="Bold"
-                       Foreground="White"
-                       HorizontalAlignment="Center"
-                       Margin="0,5,0,0"/>
+                                   FontSize="16"
+                                   FontWeight="Bold"
+                                   Foreground="White"
+                                   HorizontalAlignment="Center"
+                                   Margin="0,5,0,0"/>
 
-                        <TextBlock Text="2 ou 3 slots"
-                       FontSize="12"
-                       Foreground="#888888"
-                       HorizontalAlignment="Center"/>
+                        <TextBlock Text="3 slots"
+                                   FontSize="12"
+                                   Foreground="#888888"
+                                   HorizontalAlignment="Center"/>
 
                     </StackPanel>
 
-                </Border>
+                </Button>
 
 
                 <!-- LEGS -->
 
-                <Border Grid.Row="2"
-            Grid.Column="1"
-            Margin="5"
-            Background="#1B1B1B"
-            BorderBrush="#353535"
-            BorderThickness="1"
-            CornerRadius="8">
+                <Button x:Name="LegsButton"
+                        Grid.Row="2"
+                        Grid.Column="1"
+                        Margin="5"
+                        Background="#1B1B1B"
+                        BorderBrush="#353535"
+                        BorderThickness="1"
+                        Click="EquipmentButton_Click"
+                        Tag="Legs">
 
                     <StackPanel VerticalAlignment="Center"
-                    HorizontalAlignment="Center">
+                                HorizontalAlignment="Center">
 
                         <TextBlock Text="👖"
-                       FontSize="38"
-                       HorizontalAlignment="Center"/>
+                                   FontSize="38"
+                                   HorizontalAlignment="Center"/>
 
                         <TextBlock Text="Legs"
-                       FontSize="16"
-                       FontWeight="Bold"
-                       Foreground="White"
-                       HorizontalAlignment="Center"
-                       Margin="0,5,0,0"/>
+                                   FontSize="16"
+                                   FontWeight="Bold"
+                                   Foreground="White"
+                                   HorizontalAlignment="Center"
+                                   Margin="0,5,0,0"/>
 
                         <TextBlock Text="Sem slot"
-                       FontSize="12"
-                       Foreground="#888888"
-                       HorizontalAlignment="Center"/>
+                                   FontSize="12"
+                                   Foreground="#888888"
+                                   HorizontalAlignment="Center"/>
 
                     </StackPanel>
 
-                </Border>
+                </Button>
 
 
                 <!-- BOOTS -->
 
-                <Border Grid.Row="3"
-            Grid.Column="1"
-            Margin="5"
-            Background="#1B1B1B"
-            BorderBrush="#353535"
-            BorderThickness="1"
-            CornerRadius="8">
+                <Button x:Name="BootsButton"
+                        Grid.Row="3"
+                        Grid.Column="1"
+                        Margin="5"
+                        Background="#1B1B1B"
+                        BorderBrush="#353535"
+                        BorderThickness="1"
+                        Click="EquipmentButton_Click"
+                        Tag="Boots">
 
                     <StackPanel VerticalAlignment="Center"
-                    HorizontalAlignment="Center">
+                                HorizontalAlignment="Center">
 
                         <TextBlock Text="👢"
-                       FontSize="38"
-                       HorizontalAlignment="Center"/>
+                                   FontSize="38"
+                                   HorizontalAlignment="Center"/>
 
                         <TextBlock Text="Boots"
-                       FontSize="16"
-                       FontWeight="Bold"
-                       Foreground="White"
-                       HorizontalAlignment="Center"
-                       Margin="0,5,0,0"/>
+                                   FontSize="16"
+                                   FontWeight="Bold"
+                                   Foreground="White"
+                                   HorizontalAlignment="Center"
+                                   Margin="0,5,0,0"/>
 
                         <TextBlock Text="1 slot"
-                       FontSize="12"
-                       Foreground="#888888"
-                       HorizontalAlignment="Center"/>
+                                   FontSize="12"
+                                   Foreground="#888888"
+                                   HorizontalAlignment="Center"/>
 
                     </StackPanel>
 
-                </Border>
+                </Button>
 
 
                 <!-- ================================= -->
-                <!-- COLUNA 3 - DIREITA -->
-                <!-- 3 SLOTS -->
+                <!-- COLUNA 3 -->
                 <!-- ================================= -->
 
 
                 <!-- BACKPACK -->
 
-                <Border Grid.Row="1"
-            Grid.Column="2"
-            Margin="5"
-            Background="#1B1B1B"
-            BorderBrush="#353535"
-            BorderThickness="1"
-            CornerRadius="8">
+                <Button x:Name="BackpackButton"
+                        Grid.Row="1"
+                        Grid.Column="2"
+                        Margin="5"
+                        Background="#1B1B1B"
+                        BorderBrush="#353535"
+                        BorderThickness="1"
+                        Click="EquipmentButton_Click"
+                        Tag="Backpack">
 
                     <StackPanel VerticalAlignment="Center"
-                    HorizontalAlignment="Center">
+                                HorizontalAlignment="Center">
 
                         <TextBlock Text="🎒"
-                       FontSize="38"
-                       HorizontalAlignment="Center"/>
+                                   FontSize="38"
+                                   HorizontalAlignment="Center"/>
 
                         <TextBlock Text="Backpack"
-                       FontSize="16"
-                       FontWeight="Bold"
-                       Foreground="White"
-                       HorizontalAlignment="Center"
-                       Margin="0,5,0,0"/>
+                                   FontSize="16"
+                                   FontWeight="Bold"
+                                   Foreground="White"
+                                   HorizontalAlignment="Center"
+                                   Margin="0,5,0,0"/>
 
                         <TextBlock Text="1 slot"
-                       FontSize="12"
-                       Foreground="#888888"
-                       HorizontalAlignment="Center"/>
+                                   FontSize="12"
+                                   Foreground="#888888"
+                                   HorizontalAlignment="Center"/>
 
                     </StackPanel>
 
-                </Border>
+                </Button>
 
 
                 <!-- SHIELD -->
 
-                <Border Grid.Row="2"
-            Grid.Column="2"
-            Margin="5"
-            Background="#1B1B1B"
-            BorderBrush="#353535"
-            BorderThickness="1"
-            CornerRadius="8">
+                <Button x:Name="ShieldButton"
+                        Grid.Row="2"
+                        Grid.Column="2"
+                        Margin="5"
+                        Background="#1B1B1B"
+                        BorderBrush="#353535"
+                        BorderThickness="1"
+                        Click="EquipmentButton_Click"
+                        Tag="Shield">
 
                     <StackPanel VerticalAlignment="Center"
-                    HorizontalAlignment="Center">
+                                HorizontalAlignment="Center">
 
                         <TextBlock Text="🛡"
-                       FontSize="38"
-                       HorizontalAlignment="Center"/>
+                                   FontSize="38"
+                                   HorizontalAlignment="Center"/>
 
                         <TextBlock Text="Shield"
-                       FontSize="16"
-                       FontWeight="Bold"
-                       Foreground="White"
-                       HorizontalAlignment="Center"
-                       Margin="0,5,0,0"/>
+                                   FontSize="16"
+                                   FontWeight="Bold"
+                                   Foreground="White"
+                                   HorizontalAlignment="Center"
+                                   Margin="0,5,0,0"/>
 
                         <TextBlock Text="1 slot"
-                       FontSize="12"
-                       Foreground="#888888"
-                       HorizontalAlignment="Center"/>
+                                   FontSize="12"
+                                   Foreground="#888888"
+                                   HorizontalAlignment="Center"/>
 
                     </StackPanel>
 
-                </Border>
+                </Button>
 
 
                 <!-- TRINKET -->
 
-                <Border Grid.Row="3"
-            Grid.Column="2"
-            Margin="5"
-            Background="#1B1B1B"
-            BorderBrush="#353535"
-            BorderThickness="1"
-            CornerRadius="8">
+                <Button x:Name="TrinketButton"
+                        Grid.Row="3"
+                        Grid.Column="2"
+                        Margin="5"
+                        Background="#1B1B1B"
+                        BorderBrush="#353535"
+                        BorderThickness="1"
+                        Click="EquipmentButton_Click"
+                        Tag="Trinket">
 
                     <StackPanel VerticalAlignment="Center"
-                    HorizontalAlignment="Center">
+                                HorizontalAlignment="Center">
 
                         <TextBlock Text="🪄"
-                       FontSize="38"
-                       HorizontalAlignment="Center"/>
+                                   FontSize="38"
+                                   HorizontalAlignment="Center"/>
 
                         <TextBlock Text="Trinket"
-                       FontSize="16"
-                       FontWeight="Bold"
-                       Foreground="White"
-                       HorizontalAlignment="Center"
-                       Margin="0,5,0,0"/>
+                                   FontSize="16"
+                                   FontWeight="Bold"
+                                   Foreground="White"
+                                   HorizontalAlignment="Center"
+                                   Margin="0,5,0,0"/>
+
+                        <TextBlock Text="1 slot"
+                                   FontSize="12"
+                                   Foreground="#888888"
+                                   HorizontalAlignment="Center"/>
 
                     </StackPanel>
 
-                </Border>
+                </Button>
 
             </Grid>
+
 
             <!-- ================================= -->
             <!-- COMPARAÇÃO -->
@@ -496,14 +521,22 @@
 
                 <StackPanel>
 
-                    <TextBlock Text="Comparação de custos"
+                    <TextBlock x:Name="SelectedEquipmentText"
+                               Text="Nenhum equipamento selecionado"
                                FontSize="20"
                                FontWeight="SemiBold"
                                Foreground="White"/>
 
-                    <TextBlock Text="Selecione um equipamento para calcular o melhor custo."
+                    <TextBlock x:Name="SelectedEquipmentDescription"
+                               Text="Selecione um equipamento acima para configurar seus imbuements."
                                Foreground="#888888"
-                               Margin="0,5,0,0"/>
+                               Margin="0,5,0,15"/>
+
+
+                    <!-- ÁREA DOS SLOTS -->
+
+                    <StackPanel x:Name="SlotsPanel"
+            Margin="0,10,0,0"/>
 
                 </StackPanel>
 
